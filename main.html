@@ -1,0 +1,823 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="all-ie-only.css" />
+    <![endif]-->
+
+<head>
+    <!--
+
+    Theme: White Palace by Lilli
+
+    Base code: White Palace
+
+    Version: 1.1
+
+    -->
+    <meta name="if: Photo Small" content='0'/>
+    <meta name="if: Photo Medium" content='1'/>
+    <meta name="if: Photo Large" content='0'/>
+    <meta name="if:Infinite scroll" content="1"/>
+
+    <!--
+
+    <meta name="color:Body links" content="#615151" />
+    <meta name="color:Body text" content="#1d1818" />
+    <meta name="color:Masthead background" content="#0a0303" />
+    <meta name="color:Masthead links" content="#b9b8b8" />
+    <meta name="color:Masthead text" content="#868484" />
+    <meta name="color:Post color" content="#feffe6" />
+    <meta name="color:Text highlight" content="#d83e3e" />
+    <meta name="font:Body" content='Georgia,serif'/>
+    <meta name="if:Masthead search" content="0"/>
+    <meta name="if:Masthead portrait" content="0"/>
+    <meta name="text:Font size" content='0.8em'/>
+    <meta name="text:Google Analytics ID" content=''/>
+    <meta name="image:Masthead" content="" />
+    <meta name="text:Post margin" content='10px'/>
+    <meta name="text:Post width" content='38%'/>
+
+    --> 
+
+    {block:Description}
+
+    <meta name="description" content="{MetaDescription}" />
+
+    {/block:Description}
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+    <title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <!-- Google Fonts -->
+   <link href='http://fonts.googleapis.com/css?family=Codystar|Josefin+Sans' rel='stylesheet' type='text/css'>
+    <!-- Normalize -->
+    <link href="http://static.tumblr.com/wgijwsy/k1Hm9ei8b/normalize.css" rel="stylesheet" type="text/css" />
+
+
+    <style type="text/css">
+    /*Basic styles*/
+    ::-moz-selection {
+        background: #C13705;
+        color: white;
+    }
+    ::selection {
+        background: #C13705;
+        color: white;
+    }
+
+    #container{
+        width: 80%;
+        float: left;
+    }
+    
+    #content {
+        width: 100%;
+        margin: 20px;
+        height: auto;
+        float: left;
+    }
+    
+    /** NAVIGATION (Side Bar) **/
+
+    nav{
+        width: 20%;
+        float: left;
+    }
+
+    /***** TITLE BAR *********/
+
+    #title{
+        float: left;
+        width: 80%;
+        top: 0;
+        text-align: center;
+        clear: both;
+        padding: 30px;
+        /* Adds shadow to the bottom of the bar */
+        -webkit-box-shadow: 0px 0px 1px 0px #000000;
+        -moz-box-shadow: 0px 0px 1px 0px #000000;
+        box-shadow: 0px 0px 1px 0px #000000;
+        /* Adds the transparent background */
+        /*background-color: rgba(34, 43, 43, 0.9);*/
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 0;
+    }
+    
+    #title a{
+        font-family: "Codystar";
+        font-size: 35px;
+        color: #F5F5F5;
+        text-decoration: none;
+    }
+    
+    
+    #button-1, #button-2{
+        float: left;
+        margin-top: 15px;
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: center;
+        width: 65px;
+        color: #E0DCCF;
+        text-decoration: none;
+        height: 35px;
+        padding-top: 11px;
+        padding-bottom: 9px;
+        font-family: 'Cinzel Decorative';
+        font-weight:bold;
+        font-size: 12px;
+        /* Adds shadow to the bottom of the bar */
+        -webkit-box-shadow: 0px 0px 2px 0px #000000;
+        -moz-box-shadow: 0px 0px 2px 0px #000000;
+        box-shadow: 0px 0px 2px 0px #000000;
+        /* Adds the transparent background */
+        
+        z-index: 1000;
+    }
+    
+    #button-1{
+        margin-left: 100px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    #button-2{ 
+        margin-left: 0px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .nav a, a:visited {
+        color: #ffffff;
+        height: 35px;
+        font-family: 'Playfair Display SC';
+        padding-top: 15px;
+    }
+    
+    /************ MAIN BODY ***********/
+
+    body {
+        background-color: #E8E8E8;
+        /*background-image: url('http://i1130.photobucket.com/albums/m532/iriseth/textured_stripes.png'); */
+        background-repeat: repeat;
+        font-family: 'JOsefin Sans';
+        font-size: 10pt;
+        padding-top: 20px;
+
+    }
+
+    .link {
+        max-width:250px;
+        width:expression(document.body.clientWidth > 250? "250px": "auto" );
+        padding: 10px;
+        margin: 5px;
+        background-color: #222B2B;
+    }
+    
+    blockquote {
+
+        background: rgba(0, 0, 0, 0.2);
+        border-left: 10px solid rgba(0, 0, 0, 0.2);
+        padding-left: 0px;
+        padding: 10px;
+         color:  #8DA893;
+
+    }
+
+    iframe, img, embed, object, video {
+        max-width: 100%;
+    }
+
+    img {
+        height: auto;
+        width: auto;
+    }
+
+    /**** POSTS ****/
+    
+    article p {
+        font-family: "Josefin-Sans";
+    }
+    
+    /* Title */
+    .title a {
+        color: #F2EFDF;
+        text-decoration: none;
+    }
+
+    .elem{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .like{
+        transition: all .2s ease-in-out;
+        opacity: 1;
+
+        left: 50%;
+        right: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position:absolute;
+
+        text-align: center;
+        color: #FFFFFF;
+        font-family: "Josefin Sans";
+        font-size: 50px;
+    }
+    /* Time Stamp */
+    time{
+        color:#8DA893;
+        font-family: "Josefin Sans";
+        text-decoration: none;
+    }
+
+    time a:visited{
+         color:#8DA893;
+    }
+    
+    /*Reblog citing */ 
+    cite{
+        color: #FF4907;
+        font-family: "Josefin Sans";
+        
+    }
+    
+    cite a{
+        color: #F2EFDE;
+    }
+
+    /*Metadata*/
+    
+    
+    #notes{
+        left: 550px;
+        position: absolute;
+        color:#E0D0AA;
+    }
+    
+    #notes a{
+        color:#F2EFDE;
+    }
+    
+    #permalink {
+        /*position: absolute;*/
+        background-color: #000000;
+        padding: 10px;
+        max-width: 100%;
+        margin: 5px;
+        opacity: 0.95;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        border-right, 5px solid #000;
+        right: 5 px;
+        font-family: Trebuchet Ms;
+        font-size: 7px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
+    }
+    
+    .notecount{
+        color: #E0D0AA;
+        text-decoration: none;
+    }
+    
+   .metadata a{
+        display: inline-block;
+        text-decoration: none;
+        width: 100%;
+    }
+    
+    .metadata {
+        display: inline-block;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .reblogged {
+       color: #E0D0AA;
+       float: right;
+    }
+
+    /****PICTURES***/
+
+    .photo{
+
+    }
+
+    /* Small Pictures */
+    .photo-petit{
+        color: #E0D0AA;
+        background: #222B2B;
+        max-width: 100px;
+        padding: 10px;
+        margin: 5px;
+
+    }
+    
+    /* Medium Pictures */
+     .photo-moyen{
+        color: #E0D0AA;
+        background: #222B2B;
+        max-width: 250px;
+        width: 250px;
+        padding: 10px;
+        margin: 5px;
+        
+        opacity: 1;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+
+    }
+    
+   .photo-moyen:hover{
+        background: #000000;
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+        }
+        
+        #photo{
+            opacity:1;
+    }
+
+    
+    #photo:hover #permalink{
+        padding-left: 30px;
+        opacity: 1;
+    }
+  
+  
+    .photo-moyen p a{
+        color: #F2EFDE;
+    }
+        
+    
+    .photo-grand{
+        color: #E0D0AA;
+        background: #222B2B;
+        max-width: 500px;
+        padding: 10px;
+        margin: 5px;
+
+    }
+
+    /*** TEXT POSTS ***/
+
+    .text {
+        color:  #8DA893;
+        background: #222B2B;
+        max-width: 250px;
+        padding: 20px;
+        margin: 5px;
+        
+        opacity: 1;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+        
+    }
+
+    .text a{
+        color: #E0D0AA;
+        max-width: 250px;
+    }
+    
+        
+   .text:hover{
+        background: #000000;
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+    }
+    
+    /*** QUOTE POSTS ***/
+
+    .quote {
+        color:  #8DA893;
+        font-size: 22px;
+        background: #222B2B;
+        max-width: 250px;
+        padding: 20px;
+        margin: 5px;
+        
+        opacity: 1;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+    }
+    
+    
+    .quote:hover {
+        background: #000000;
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+    }
+    
+    /***CHAT POSTS***/
+    .chat span {
+        margin-right: 1%;
+    }
+
+    .pagination, .pagination a {
+        float:right;
+        font-size:12px;
+        font-variant: small-caps;
+        text-decoration: none;
+        font-family: Trebuchet MS;
+        color: #FFFFF0;
+        background-color:#000000;
+    }
+
+    
+    /*Tags and notes*/
+
+    #tags, nav ul, .chat ul {
+
+        list-style: none;
+
+        list-style-image: none;
+
+        margin: 0;
+
+        padding: 0;
+
+    }
+
+    #tags li {
+
+        float: left;
+
+        margin-right: 1%;
+
+    }
+    
+    
+    #footer {
+       position:fixed;
+       left:0px;
+       bottom:0px;
+       height:15px;
+       width:100%;
+       background:#000000;
+        }
+    
+    
+    #details{
+
+        background-color: #000000;
+        padding: 10px;
+        max-width: 250px;
+        margin: 5px;
+        opacity: 0.95;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        border-right, 5px solid #000;
+        right: 5 px;
+        font-family: Trebuchet Ms;
+        font-size: 7px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
+    }
+    
+    .copyright{
+        position: relative;
+        color: #8DA893;
+        font-size:8px;
+        top: 2px;
+        text-align:center;
+        font-variant: small-caps;
+    }
+    
+   .fade:hover {
+      opacity: 0.5;
+      }
+
+    </style>
+
+
+    </head>
+
+    <body>
+    <!-- MAIN PAGE -->
+    <div id="content">
+    
+         <!-- NAVIGATION BAR -->
+        <nav>
+            <div id="title">
+                <a href="/" title="{lang:Home}">{Title}</a>   
+            </div>
+           {block:AskEnabled}
+                <div id="button-1">
+                    <a href="/ask">
+                    <img src="http://i1130.photobucket.com/albums/m532/iriseth/email1.png">
+                    </a>
+                </div>
+            {/block:AskEnabled}
+    
+            <div id ="button-2">
+                    <a href="{RSS}"><img src="http://i1130.photobucket.com/albums/m532/iriseth/rss1.png"></a>
+            </div>      
+            <div id = "follow_btn">
+            <!-- Big navigation button here -->
+            </div>
+
+            <div id = "pages">
+            {block:HasPages}
+            {block:Pages} 
+            <a href=" {URL}"> {Label} </a> 
+            {/block:Pages}
+            {/block:HasPages}
+            </div>
+            
+            {block:SubmissionsEnabled}
+            <a href="/submit">{SubmitLabel}</a>
+            {/block:SubmissionsEnabled}
+
+            <!--Search -->
+            {block:IfMastheadSearch}
+            <form  action="/search" method="get">
+                <input type="text" id = 'search' name="q" value="{SearchQuery}"/>
+                <input type="submit" value="{lang:Search}"/>
+            </form>
+            {/block:IfMastheadSearch}
+        </nav> <!-- end nav -->
+
+        <div id="container">  
+        <!-- FOR EACH POST -->
+        {block:Posts}
+        <article>
+            <div class="post">
+                <!--Metadata-->
+                <div id="permalink">
+                    <header class="metadata">
+                    {block:Date}
+                        <a href="{Permalink}">
+                            <time>{DayOfMonth} {Month} {Year}</time>
+                        </a>
+                    {/block:Date} 
+                    {block:NoteCount}
+                        <a class="notecount" href="{Permalink}#notes">
+                            {NoteCountWithLabel}
+                        </a> 
+                    {/block:NoteCount}
+                    </header>
+                </div>
+                
+                <!--FOR EACH POST TYPE-->
+
+                    <!-- TEXT -->
+                {block:Text}
+                    <div class="text">
+                        {block:Title}
+                            <h1 class="title"><a href="{Permalink}">{Title}</a></h1>
+                        {/block:Title}
+
+                        {Body}
+
+                    </div>
+                    {/block:Text}
+
+                <!-- PHOTO -->
+                {block:Photo}
+                
+                    {block:IfPhotoMedium}
+                    <div id="photo">
+                    {block:IndexPage} <!-- Main page -->
+                        <div class="photo-moyen" style="height:{PhotoHeight-250}px">
+                        <a href = "{Permalink}">
+                            <img src="{PhotoURL-250}" alt="{PhotoAlt}" />
+                        </a>
+
+                        <div class = "like">
+                            {LikeButton size="100"}
+                        </div>
+                        </div>
+                    {/block:IndexPage}
+                    
+                    {block:PermalinkPage} <!-- Permalink -->
+                        <div class="photo-grand">
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                        </div>
+
+                        {block:Caption}
+                        <div class = "caption">
+                            {Caption}
+                        </div>
+                        {/block:Caption}
+
+                    {/block:PermalinkPage}
+                    </div>   
+                    {/block:IfPhotoMedium}
+                
+                    {block:IfPhotoLarge}
+                    <div id="photo">
+                    {block:IndexPage} <!-- Main page -->
+                        <div class="photo-grand">
+                        <a href = "{Permalink}">
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                        </a>
+                        </div>
+                    {/block:IndexPage}
+
+                    {block:PermalinkPage} <!-- Permalink -->
+                        <div class="photo-grand">
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                        </div>
+
+                        {block:Caption}
+                        <div class = "caption">
+                            {Caption}
+                        </div>
+                        {/block:Caption}
+
+                    {/block:PermalinkPage}
+                    </div>
+                
+                    {/block:IfPhotoLarge}
+                
+                    {/block:Photo}
+
+                <!-- PhotoSet -->
+                {block:Photoset}
+                    <div class="photoset">
+
+                        {block:IndexPage}
+                        <div class = "photo-grand">
+                        {Photoset-250}
+                        </div>
+                        {/block:IndexPage}
+
+                        {block:PermalinkPage}
+                        <div class = "photo-grand">
+                        {Photoset-700}
+                        </div>
+                        {/block:PermalinkPage}
+
+                        {block:Caption}{Caption}{/block:Caption}
+
+                    </div>
+                {/block:Photoset}
+
+                <!-- QUOTES -->
+                {block:Quote}
+                    <div class="quote">
+                        <blockquote>{Quote}</blockquote>
+                        {block:Source}
+                        <cite> {Source} </cite>
+                        {/block:Source}
+                    </div>
+                {/block:Quote}
+
+                <!-- LINKS -->
+                {block:Link}
+                    <div class="link">
+                        <h1 class="title">
+                            <a href="{URL}">{Name}</a>
+                        </h1>
+
+                        {block:Description}
+                        {Description}
+                        {/block:Description}
+
+                    </div>
+                {/block:Link}
+
+                <!-- CHAT -->
+                {block:Chat}
+                    <div class="chat">
+                        <ul>
+                            {block:Lines}<li class="{Alt}">
+                            {block:Label}<span class="label">{Label}</span>{/block:Label}
+                            <p> {Line} </p></li>
+                            {/block:Lines}
+                        </ul>
+                    </div>
+                {/block:Chat}
+
+                <!-- AUDIO -->
+                {block:Audio}
+                    <div class="audio">
+                        {block:TrackName}
+                        <h1 class="title"><a href="{Permalink}">{TrackName}</a></h1>
+                        {/block:TrackName}
+
+                        <div class="albumart">
+                            {block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500"/>{/block:AlbumArt}
+                        </div>
+
+                        <div class="player">
+                            {AudioPlayerBlack}
+                        </div>
+
+                        {block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}
+
+                        {block:Caption}{Caption}{/block:Caption}
+
+                    </div>
+                {/block:Audio}
+
+                <!-- VIDEO -->
+                {block:Video}
+                    <div class="video">
+
+                        <div class="video-player">
+                            {Video-500}
+                        </div>
+
+                        {block:Caption}{Caption}{/block:Caption}
+
+                    </div>
+                {/block:Video}
+
+                <!-- ANSWER -->
+                {block:Answer}
+                    <div class="answer">
+                        <h1 class="title">{Question}</h1>
+                        <div class="user">
+                            <img src="{AskerPortraitURL-96}"/><p>{Asker}</p>
+                        </div>
+                        {Answer}
+                    </div>
+                {/block:Answer}
+            </div> <!-- End posts-->
+
+            <!--Post footer (tags and notes) on displayed on permalink pages-->
+
+            {block:PermalinkPage}
+                <div id="notes">
+                    {block:HasTags}
+                    <div id="tags">
+                        {block:Tags}
+                        <a href="{TagURL}">#{Tag}</a>
+                        {/block:Tags}
+                    </div>
+                    {/block:HasTags}
+                    {block:PostNotes}
+                        {PostNotes}
+                    {/block:PostNotes}
+                </div>
+            {/block:PermalinkPage}
+        </article>
+        {/block:Posts}
+        </div> <!-- End container -->
+    </div> <!-- end content -->
+
+    <!-- FOOTER -->
+    <div id="footer">  
+        <div class="copyright">
+        Theme by Lillian Choung
+        </div>
+    </div>
+
+    <!--Links to jQuery library, Masonry, infinite scroll and imagesLoaded-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+    <script src="http://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+
+    {block:IfInfiniteScroll}
+
+        <script src="http://static.tumblr.com/wgijwsy/u2vm2hxv6/jquery.infinitescroll.min.js"></script>
+
+        <script src="http://static.tumblr.com/iwtk77u/Yhym2yygt/jquery.imagesloaded.min.js"></script>
+
+    {/block:IfInfiniteScroll}
+
+    <!--Code for infinite scroll and grid layout-->
+
+{block:Pagination}
+    <ul style="display: none" class="pagination">
+        <li>{block:NextPage}<a href="{NextPage}" class="pagination_nextlink">Next</a>{/block:NextPage}</li>
+    </ul>
+{/block:Pagination}
+
+    <script type="text/javascript">
+            $(function()
+            {
+                var $container = $('#container').css({ opacity: 0 });
+                $container.imagesLoaded(function(){
+                    $container.animate({ opacity: 1 });
+                    $container.masonry({itemSelector:'.post', isAnimated: true,});
+                });
+
+                $container.infinitescroll({navSelector:'.pagination',nextSelector:'.pagination li a.pagination_nextlink',itemSelector: '{block:IfInfiniteScroll}.post{/block:IfInfiniteScroll}',loading: {img:'http://static.tumblr.com/glziqhp/eRkls6pz6/white-90perc-opacity.png',donetext:''}},function( newElements )
+                {
+                        var $newElems = $( newElements ).css({ opacity: 0 });
+                        $newElems.imagesLoaded(function()
+                        {
+                            $newElems.animate({ opacity: 1 });
+                            $container.masonry( 'appended', $newElems, true );
+                        });
+                });
+            });
+            
+    </script>
